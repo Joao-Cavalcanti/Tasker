@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.TaskerInput{
+    border-radius: 8px;
+    border-width: 1px;
+}
+
+.TaskerButton{
+    border-radius: 8px;
+    border-width: 1px;
+    background-color: rgb(232, 254, 254);
+}
+
+.TaskTable{
+    position: fixed;
+    top: 5%;
+    left: 10%;
+    width: 320px;
+    height: 580px;
+
+    overflow: scroll;
+    border-radius: 10px;
+    background-color: aquamarine;
+}
+
+.Head {
+    position: fixed;
+    
+    bottom: 8%;
+    left: 20%;
+    border-top: 1px solid;
+    border-color: black;
+  
+    padding-top: 30px;
+}
+
+
+.TaskList{
+    background-color: aquamarine;
+    width: 320px;
+    border-collapse: collapse;
+    border: 1px solid white;
+    table-layout: fixed;
+    
+}
+
+.text{
+    word-wrap: break-word;
+}
+
+.removeBtn{
+    border-radius: 8px;
+    border-width: 0px;
+    background-color: rgb(232, 254, 254);
+}
+tr{
+    border: 1px solid white;
+}

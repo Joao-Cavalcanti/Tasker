@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="laoder.js"></script>
+    <!-- <input type="checkbox"> -->
+</head>
+
+<body>
+    
+
+    <div id="Tasks" class="TaskTable">
+        <table class="TaskList">
+            <thead>
+          
+            </thead>
+            <tbody></tbody>
+            
+        </table>
+    </div>
+    
+    <form action="addtask" method="POST" class="Head">
+        <div id="Tasker">
+            <input type="text" id="tasker" name="tasker" class="TaskerInput">
+            <button class="TaskerButton">Add</button>
+        </div>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        const tbodyEl = document.querySelector('tbody');
+        const tableEl = document.querySelector('table');
+        function onAddTaks(e){
+            e.preventDefault();
+            form.submit()
+            
+        }
+        
+        function onRemoveTask(e){
+            if (!e.target.classList.contains("removeBtn")){
+                return;
+            }
+
+            const btn = e.target;
+            const Data = btn.value;
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "remove", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                value: Data
+            }));
+
+            btn.closest("tr").remove()
+        }
+        
+        
+        form.addEventListener("submit", onAddTaks)
+        tableEl.addEventListener("click", onRemoveTask)
+
+    </script>
+</body>
+
+</html>
